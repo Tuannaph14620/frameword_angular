@@ -1,0 +1,26 @@
+<button (click)= "onHandleClick()">Click</button>
+{{isStatus}}
+<div *ngIf = "isStatus">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor= "let product of productList">
+                <td>1</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td> 
+                    <button class="btn btn danger">Delete</button>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+
