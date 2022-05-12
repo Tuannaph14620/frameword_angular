@@ -1,5 +1,6 @@
 <button (click)= "onHandleClick()">Click</button>
-{{isStatus}}
+<input type="text" [(ngModel)]="productName" >
+{{productName}}
 <div *ngIf = "isStatus">
     <table class="table table-bordered">
         <thead>
@@ -11,12 +12,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor= "let product of productList">
-                <td>1</td>
+            <tr *ngFor= "let product of productList, let i = index">
+                <td>{{i+ 1}}</td>
                 <td>{{product.name}}</td>
                 <td>{{product.price}}</td>
                 <td> 
-                    <button class="btn btn danger">Delete</button>
+                    <button (click)= "onHandleDelete(product.id)" class="btn btn danger">Delete</button>
                 </td>
             </tr>
             
